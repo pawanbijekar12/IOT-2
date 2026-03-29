@@ -1,0 +1,23 @@
+Pushbutton LED 
+
+#define my_led 2
+#define button 8
+// global declaration
+void setup() {
+ Serial.begin(9600); //to begin data comm.
+ pinMode(my_led,OUTPUT); // this is for LED
+ pinMode(button,INPUT); //this is for button
+//this is a setup
+}
+
+void loop() {
+      bool x = digitalRead(button);
+ if(x==1){
+digitalWrite(my_led, HIGH);
+ Serial.println("LED turns ON");
+ }
+ else{
+  digitalWrite(my_led,LOW);
+  Serial.println("LED turns OFF");
+ }
+}
